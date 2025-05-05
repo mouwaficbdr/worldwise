@@ -1,8 +1,13 @@
+import PageNav from "../components/PageNav";
+
 const Pricing = () => {
   return (
-    <h1>
-      Pricing
-    </h1>
+    <div>
+      <PageNav/>
+      <h1>
+        Pricing
+      </h1>
+    </div>
   );
 };
 
