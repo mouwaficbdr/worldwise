@@ -13,7 +13,7 @@ const BASE_URL = 'http://localhost:8000';
 
 const App = () => {
 
-  const [cities, setCities] = useState({});
+  const [cities, setCities] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
 
 
@@ -33,6 +33,7 @@ const App = () => {
     fetchCities();
   }, []);
 
+
   return (
     <BrowserRouter>
       <Routes>
@@ -42,7 +43,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="app" element={<AppLayout />}>
           <Route index element={<p>List of cities</p>} />
-          <Route path="cities" element={<CityList/>} />
+          <Route path="cities" element={<CityList cities={cities}  isLoading={isLoading}/>} />
           <Route path="countries" element={<p>List of countries</p>} />
           <Route path="form" element={<p>Form</p>} />
         </Route>
